@@ -1,0 +1,267 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../images/nice_snow.png");
+}
+
+/**********************************************/
+/******************* HEADER *******************/
+/**********************************************/
+
+header {
+	background-color: white;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: #dddddd;
+}
+
+.headerelements {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+h1, h2 {
+	font-family: 'Georgia', Times, 'Times New Roman', serif;
+	font-weight: bolder;
+}
+
+h1 {
+	color: white;
+	font-size: 36px;
+	background-color: lightseagreen;
+	display: inline-block;
+	padding: 25px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+p,
+a {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #777777;
+}
+
+.textlinks {
+	display: inline-block;
+	text-align: center;
+	padding: 35px 0;
+	vertical-align: top;
+	position: absolute;
+	right: 0px;
+	width: 270px;
+}
+
+.textlinks a {
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 1px;
+	border-color: #777777;
+	border-style: solid;
+}
+
+.textlinks a:last-child {
+	border-right: none;
+}
+
+/************************************************/
+/************** MAIN / ABOUT ME *****************/
+/************************************************/
+
+section {
+	margin-top: 50px;
+}
+
+p {
+	line-height: 1.7;
+}
+
+h2 {
+	font-size: 24px;
+	color: lightseagreen;
+	padding: 7px;
+	border-bottom: 1px;
+	border-color: #dddddd;
+	border-style: solid;
+}
+
+.hidden {
+	display: none;
+}
+
+main {
+	width: 960px;
+	margin: auto;
+}
+
+.profilepic {
+	float: left;
+	margin-right: 15px;
+	width: 250px;
+	border-radius: 5px;
+}
+
+.aboutme {
+	width: 650px;
+	float: left;
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 50px;
+}
+
+
+/***********************************************/
+/******************* SIDEBAR *******************/
+/***********************************************/
+
+.sidebar {
+	float: right;
+	width: 270px;
+	padding: 10px;
+	background-color: white;
+	margin-top: 50px;
+}
+
+.connectwithme {
+	text-align: center;
+}
+
+.connectwithme img {
+	height: 64px;
+	width: 64px;
+	transition: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.connectwithme img:hover {
+	opacity: 0.6;
+	transform: rotate(25deg);
+}
+
+/**********************************************/
+/******************* FOOTER *******************/
+/**********************************************/
+
+span {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: white;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	padding: 30px;
+	background-color: #666666;
+	border-top: 8px;
+	border-style: solid;
+	border-color: lightseagreen;
+	margin-top: 20px;
+}
+
+.container {
+		min-height: calc(100vh - 124px);
+}
+
+/******************************************************/
+/******************* PORTFOLIO PAGE *******************/
+/******************************************************/
+
+.portfolio {
+	width: 650px;
+	float: left;
+	background-color: white;
+	margin-bottom: 50px;
+	padding: 10px;
+}
+
+.portfolio p {
+	color: #ffffff;
+	font-weight: bold;
+	background-color: lightseagreen;
+	opacity: 0.9;
+	width: 250px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	top: -50px;
+	text-transform: uppercase;
+	transition: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
+.portfolio li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.portfolio img {
+	border-radius: 10px;
+	transition: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
+.portfolio img:hover {
+	box-shadow: 7px 7px 16px 2px rgba(0,0,0,0.56);
+	-webkit-box-shadow: 7px 7px 16px 2px rgba(0,0,0,0.56);
+	-moz-box-shadow: 7px 7px 16px 2px rgba(0,0,0,0.56);
+}
+
+.portfolio p:hover {
+	opacity: 1;
+}
+
+/****************************************************/
+/******************* CONTACT PAGE *******************/
+/****************************************************/
+
+
+.contact {
+	width: 650px;
+	float: left;
+	background-color: white;
+	margin-bottom: 50px;
+	padding: 10px;
+}
+
+label {
+	margin: 5px;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #777777;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 5px;
+	margin: 5px 0 15px 0;
+	border-radius: 4px;
+}
+
+textarea {
+	width: 250px;
+	height: 120px;
+	padding: 5px;
+	margin-top: 5px;
+	border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: lightseagreen;
+	color: white;
+	padding: 5px;
+    border-radius: 4px;
+    border: none;
+    width: 15%;
+ }
+
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+
