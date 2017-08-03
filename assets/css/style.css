@@ -101,7 +101,7 @@ main {
 
 .profilepic {
 	float: left;
-	margin-right: 15px;
+	margin: 0 15px 5px 0;
 	width: 250px;
 	border-radius: 5px;
 }
@@ -164,7 +164,7 @@ footer {
 }
 
 .container {
-		min-height: calc(100vh - 124px);
+		min-height: calc(100vh - 98px);
 }
 
 /******************************************************/
@@ -216,6 +216,7 @@ footer {
 .portfolio p:hover {
 	opacity: 1;
 }
+
 
 /****************************************************/
 /******************* CONTACT PAGE *******************/
