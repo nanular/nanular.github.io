@@ -140,7 +140,7 @@ $("#tidusImage").click (function() {
 
 
 //Choosing Opponents//
-
+if (!enemySelected) {
 $("#enemy1").click (function() {
 	
 	enemySelected = true;
@@ -150,14 +150,14 @@ $("#enemy1").click (function() {
 		currentEnemyName = fighters[1].name;
 		currentEnemyIndex = 1;
 		$("#currentEnemy").attr("src", "assets/images/characters/yuffie.png");
-		$("#battleStats").html("<br>" + fighters[1].name + "'s HP: " + fighters[1].hp);
+		$("#hpLevels").html("<br>" + fighters[currentEnemyIndex].name + "'s HP: " + fighters[1].hp);
 	}
 
 	else if (characterSelected) {
 		currentEnemyName = fighters[0].name;
 		currentEnemyIndex = 0;
 		$("#currentEnemy").attr("src", "assets/images/characters/terra.png");
-		$("#battleStats").html("<br>" + fighters[0].name + "'s HP: " + fighters[0].hp);
+		$("#hpLevels").html("<br>" + fighters[currentEnemyIndex].name + "'s HP: " + fighters[0].hp);
 	}
 })
 
@@ -173,21 +173,21 @@ $("#enemy2").click (function() {
 		currentEnemyName = fighters[2].name;
 		currentEnemyIndex = 2;
 		$("#currentEnemy").attr("src", "assets/images/characters/cloud.png");
-		$("#battleStats").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
+		$("#hpLevels").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
 	}
 
 	else if (characterSelected && currentCharacterName === fighters[1].name) {
 		currentEnemyName = fighters[2].name;
 		currentEnemyIndex = 2;
 		$("#currentEnemy").attr("src", "assets/images/characters/cloud.png");
-		$("#battleStats").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
+		$("#hpLevels").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
 	}
 
 	else if (characterSelected) {
 		currentEnemyName = fighters[1].name;
 		currentEnemyIndex = 1;
 		$("#currentEnemy").attr("src", "assets/images/characters/yuffie.png");
-		$("#battleStats").html("<br>" + fighters[1].name + "'s HP: " + fighters[1].hp);
+		$("#hpLevels").html("<br>" + fighters[1].name + "'s HP: " + fighters[1].hp);
 	}
 })
 
@@ -203,18 +203,18 @@ $("#enemy3").click (function() {
 		currentEnemyName = fighters[2].name;
 		currentEnemyIndex = 2;
 		$("#currentEnemy").attr("src", "assets/images/characters/tidus.png");
-		$("#battleStats").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
+		$("#hpLevels").html("<br>" + fighters[2].name + "'s HP: " + fighters[2].hp);
 	}
 
 	else if (characterSelected) {
 		currentEnemyName = fighters[3].name;
 		currentEnemyIndex = 3;
 		$("#currentEnemy").attr("src", "assets/images/characters/tidus.png");
-		$("#battleStats").html("<br>" + fighters[3].name + "'s HP: " + fighters[3].hp);
+		$("#hpLevels").html("<br>" + fighters[3].name + "'s HP: " + fighters[3].hp);
 	}
 })
 
-
+}
 
 
 
@@ -227,21 +227,23 @@ if (characterSelected && enemySelected) {
 }
 
 $("#attackButton").click (function() {
-	if (attackButtonUnlock) {
 		if (fighters[currentEnemyIndex].hp > 0) {
 			fighters[currentEnemyIndex].hp = fighters[currentEnemyIndex].hp - fighters[currentCharacterIndex].attack;
 			fighters[currentCharacterIndex].hp = fighters[currentCharacterIndex].hp - fighters[currentEnemyIndex].counterAttack;
-			$("#opponentAttack").html(fighters[currentEnemyIndex] + " attacks you for " + fighters[currentEnemyIndex].counterAttack + " damage");
+			$("#opponentAttack").html(fighters[currentEnemyIndex].name + " attacks you for " + fighters[currentEnemyIndex].counterAttack + " damage");
 			$("#yourAttack").html("You attack " + fighters[currentEnemyIndex].name + " for " + fighters[currentCharacterIndex].attack + " damage")
-			$("#hpLevels").html(fighters[currentCharacterIndex] + "'s HP: " + fighters[currentCharacterIndex].hp + "<br>");
-			$("#hpLevels").append(fighters[currentEnemyIndex] + "'s HP: " + fighters[currentEnemyIndex].hp);
+			$("#hpLevels").html(fighters[currentCharacterIndex].name + "'s HP: " + fighters[currentCharacterIndex].hp + "<br>");
+			if (fighters[currentEnemyIndex].hp > 0) {
+				$("#hpLevels").append(fighters[currentEnemyIndex].name + "'s HP: " + fighters[currentEnemyIndex].hp);
+			} else {
+				$("#hpLevels").append(fighters[currentEnemyIndex].name + "'s HP: 0");
+			}
 			fighters[currentCharacterIndex].attack = fighters[currentCharacterIndex].attack * 2;
 		} else {
 			fighters[currentEnemyIndex].hp = 0
 			$("#currentEnemy").attr("src", "assets/images/chooseopponent.jpg");
 			$("#battleStats").html("You've defeated " + fighters[currentEnemyIndex].name + "<br>You have" + fighters[currentCharacterIndex].hp + " remaining.");
 		}
-	}
 })
 
 
