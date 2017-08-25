@@ -48,6 +48,8 @@ var enemySelected = false;
 var attackButtonUnlock = false;
 
 var selectionSound = $("#selectionSound")[0];
+var deathSound = $("#deathSound")[0];
+var enemySelectionSound = $("#enemySelectionSound")[0];
 
 
 //.hover Events That Display Character Statistics
@@ -171,6 +173,7 @@ $("#enemy1").click (function() {
 	
 	if (!enemySelected) { 
 		enemySelected = true;
+		enemySelectionSound.play();
 		$("#battleMessage").html("");
 		$("#yourAttack").html("");
 		$("#opponentAttack").html("");
@@ -201,6 +204,7 @@ $("#enemy2").click (function() {
 	
 	if (!enemySelected) {
 		enemySelected = true;
+		enemySelectionSound.play();
 		$("#battleMessage").html("");
 		$("#yourAttack").html("");
 		$("#opponentAttack").html("");
@@ -239,6 +243,7 @@ $("#enemy3").click (function() {
 	
 	if (!enemySelected) {
 		enemySelected = true;
+		enemySelectionSound.play();
 		$("#battleMessage").html("");
 		$("#yourAttack").html("");
 		$("#opponentAttack").html("");
@@ -287,6 +292,7 @@ $("#attackButton").click (function() {
 			if (fighters[currentEnemyIndex].hp > 0) {
 				$("#hpLevels").append(fighters[currentEnemyIndex].name + "'s HP: " + fighters[currentEnemyIndex].hp);
 			} else {
+				deathSound.play();
 				fighters[currentEnemyIndex].hp = 0
 				$("#hpLevels").append(fighters[currentEnemyIndex].name + "'s HP: " + fighters[currentEnemyIndex].hp);
 				$("#currentEnemy").attr("src", "assets/images/chooseopponent.jpg");
@@ -298,12 +304,8 @@ $("#attackButton").click (function() {
 		}
 })
 
-// if (!fighters[0].alive && !fighters[1].alive && !fighters[2].alive && !fighters[3].alive) {
-// 	$("#battleStats").html("You did it!<br>You've murdered everyone!<br>Congratulations")
-// }
 
 $("#restartButton").click (function() {
-	fighters[3].alive = true;
 	window.location.reload(true);
 })
 
