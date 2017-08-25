@@ -47,36 +47,58 @@ var characterSelected = false;
 var enemySelected = false;
 var attackButtonUnlock = false;
 
+var selectionSound = $("#selectionSound")[0];
+
 
 //.hover Events That Display Character Statistics
+
 $("#terraImage").hover (
 	function() {
-	$("#stats").html("Name: " + fighters[0].name + "<br> HP: " + fighters[0].hp + "<br> Attack: " + fighters[0].attack);
+		if (!characterSelected) {
+			$("#stats").html("Name: " + fighters[0].name + "<br> HP: " + 
+				fighters[0].hp + "<br> Attack: " + fighters[0].attack);
+		}
 }, function() {
-	$("#stats").html("<br><br><br>");
+	if (!characterSelected) {
+		$("#stats").html("<br><br><br>");
+	}
 })
 
 $("#yuffieImage").hover (
 	function() {
-	$("#stats").html("Name: " + fighters[1].name + "<br> HP: " + fighters[1].hp + "<br> Attack: " + fighters[1].attack);
+		if (!characterSelected) {
+			$("#stats").html("Name: " + fighters[1].name + "<br> HP: " + 
+				fighters[1].hp + "<br> Attack: " + fighters[1].attack);
+	}
 }, function() {
-	$("#stats").html("<br><br><br>");
+	if (!characterSelected) {
+		$("#stats").html("<br><br><br>");
+	}
 })
 
 $("#cloudImage").hover (
 	function() {
-	$("#stats").html("Name: " + fighters[2].name + "<br> HP: " + fighters[2].hp + "<br> Attack: " + fighters[2].attack);
+		if (!characterSelected) {
+			$("#stats").html("Name: " + fighters[2].name + "<br> HP: " + 
+				fighters[2].hp + "<br> Attack: " + fighters[2].attack);
+		}
 }, function() {
-	$("#stats").html("<br><br><br>");
+	if (!characterSelected) {
+		$("#stats").html("<br><br><br>");
+	}
 })
 
 $("#tidusImage").hover (
 	function() {
-	$("#stats").html("Name: " + fighters[3].name + "<br> HP: " + fighters[3].hp + "<br> Attack: " + fighters[3].attack);
+		if (!characterSelected) {
+			$("#stats").html("Name: " + fighters[3].name + "<br> HP: " + 
+				fighters[3].hp + "<br> Attack: " + fighters[3].attack);
+		}	
 }, function() {
-	$("#stats").html("<br><br><br>");
+	if (!characterSelected) {
+		$("#stats").html("<br><br><br>");
+	}
 })
-
 
 
 
@@ -85,6 +107,7 @@ $("#tidusImage").hover (
 
 $("#terraImage").click (function() {
 	if (!characterSelected) {
+		selectionSound.play();
 		characterSelected = true;
 		currentCharacterIndex = 0;
 		$("#chooseYourWarrior").html(fighters[currentCharacterIndex].name);
@@ -98,6 +121,7 @@ $("#terraImage").click (function() {
 
 $("#yuffieImage").click (function() {
 	if (!characterSelected) {
+		selectionSound.play();
 		characterSelected = true;
 		currentCharacterIndex = 1;
 		$("#chooseYourWarrior").html(fighters[currentCharacterIndex].name);
@@ -111,6 +135,7 @@ $("#yuffieImage").click (function() {
 
 $("#cloudImage").click (function() {
 	if (!characterSelected) {
+		selectionSound.play();
 		characterSelected = true;
 		currentCharacterIndex = 2;
 		$("#chooseYourWarrior").html(fighters[currentCharacterIndex].name);
@@ -124,6 +149,7 @@ $("#cloudImage").click (function() {
 
 $("#tidusImage").click (function() {
 	if (!characterSelected) {
+		selectionSound.play();
 		characterSelected = true;
 		currentCharacterIndex = 3;
 		$("#chooseYourWarrior").html(fighters[currentCharacterIndex].name);
@@ -145,6 +171,9 @@ $("#enemy1").click (function() {
 	
 	if (!enemySelected) { 
 		enemySelected = true;
+		$("#battleMessage").html("");
+		$("#yourAttack").html("");
+		$("#opponentAttack").html("");
 		$("#enemy1").attr("src", "assets/images/placeholder.jpg");
 		
 		if (characterSelected && currentCharacterIndex === 0) {	
@@ -172,6 +201,9 @@ $("#enemy2").click (function() {
 	
 	if (!enemySelected) {
 		enemySelected = true;
+		$("#battleMessage").html("");
+		$("#yourAttack").html("");
+		$("#opponentAttack").html("");
 		$("#enemy2").attr("src", "assets/images/placeholder.jpg");
 		
 		if (characterSelected && currentCharacterIndex === 0) {	
@@ -207,6 +239,9 @@ $("#enemy3").click (function() {
 	
 	if (!enemySelected) {
 		enemySelected = true;
+		$("#battleMessage").html("");
+		$("#yourAttack").html("");
+		$("#opponentAttack").html("");
 		$("#enemy3").attr("src", "assets/images/placeholder.jpg");
 		
 		if (characterSelected && currentCharacterIndex === 3) {	
@@ -255,7 +290,7 @@ $("#attackButton").click (function() {
 				fighters[currentEnemyIndex].hp = 0
 				$("#hpLevels").append(fighters[currentEnemyIndex].name + "'s HP: " + fighters[currentEnemyIndex].hp);
 				$("#currentEnemy").attr("src", "assets/images/chooseopponent.jpg");
-				$("#battleStats").html("You've defeated " + fighters[currentEnemyIndex].name + "<br>You have" + fighters[currentCharacterIndex].hp + " remaining.");
+				$("#battleMessage").html("You've defeated " + fighters[currentEnemyIndex].name + "<br>You have " + fighters[currentCharacterIndex].hp + " HP remaining.");
 				fighters[currentEnemyIndex].alive = false;
 				enemySelected = false;
 			}
