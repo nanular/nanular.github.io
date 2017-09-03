@@ -1,0 +1,104 @@
+*
+{
+	font-family: verdana;
+}
+
+@font-face
+{
+    font-family: "lansbury";
+    src: url("../fonts/lansbury.ttf") format("truetype");
+}
+
+ul
+{
+	list-style: none;
+}
+
+header
+{
+	height: 225px;
+	background-color: #F3F3F3;
+	padding: 25px;
+	margin-bottom: 65px;
+
+	border-bottom-style: solid;
+	border-bottom-width: 15px;
+	border-bottom-color: : rgba(140, 140, 130, 0.50);
+}
+
+h1
+{
+	font-family: "lansbury";
+	font-size: 8.5em;
+	text-shadow: 7px 4px 11px rgba(0,0,0,0.25);
+}
+
+button
+{
+	margin-bottom: 6px;
+}
+
+strong
+{
+	color: red;
+	font-weight: bolder;
+	font-size: 0.9em;
+}
+
+.allQuestions
+{
+	border-radius: 25px;
+	background-color: #F3F3F3;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	font-size: 1.35em;
+	display: none;
+}
+
+.currentQuestion
+{
+	background-color: #8E8B82;
+	border-radius: 25px;
+	padding: 15px;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	margin-right: 25px;
+	height: 250px;
+}
+
+.allQuestions,
+.currentQuestion,
+.allAnswers {
+	box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.40);
+	-webkit-box-shadow: 15px 15px 30 0px rgba(0,0,0,0.40);
+	-moz-box-shadow: 15px 15px 30 0px rgba(0,0,0,0.4);
+}
+
+.allAnswers
+{
+	height: 250px;
+	background-color: #E9DCBE;
+	border-radius: 25px;
+	padding: 25px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	display: none;
+}
+
+#timerDisplay
+{
+	font-size: 3.1em;
+	font-weight: bolder;
+	padding-top: 15px;
+}
+
+#quizResults
+{
+	display: none;
+}
+
+#triviaMessage
+{
+	font-size: 0.85em;
+}
+
