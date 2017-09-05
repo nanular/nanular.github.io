@@ -9,6 +9,12 @@
     src: url("../fonts/lansbury.ttf") format("truetype");
 }
 
+@font-face
+{
+	font-family: "alarmclock";
+	src: url("../fonts/alarmclock.ttf") format("truetype");
+}
+
 ul, li
 {
 	list-style: none;
@@ -96,9 +102,9 @@ strong
 
 #timerDisplay
 {
-	color: #F9F9F9;
-	font-size: 3.1em;
-	font-weight: bolder;
+	font-family: alarmclock;
+	color: red;
+	font-size: 4em;
 	padding: 15px;
 	text-align: center;
 	background: url("../images/background.png") repeat;
