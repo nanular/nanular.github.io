@@ -15,11 +15,12 @@ ul, li
 	width: 175px;
 }
 
-.btn
+.btn-primary
 {
 	box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
 	-webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
 	-moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
+	width: 225%;
 }
 
 header
