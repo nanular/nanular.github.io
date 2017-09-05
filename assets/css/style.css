@@ -9,22 +9,34 @@
     src: url("../fonts/lansbury.ttf") format("truetype");
 }
 
-ul
+ul, li
 {
 	list-style: none;
+	width: 175px;
+}
+
+.btn
+{
+	box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
 }
 
 header
 {
-	height: 225px;
-	background-color: #F3F3F3;
-	padding: 25px;
-	margin-bottom: 65px;
+	color: white;
+	padding: 20px;
+	margin-bottom: 45px;
 
 	border-bottom-style: solid;
-	border-bottom-width: 15px;
+	border-bottom-width: 7px;
 	border-bottom-color: : rgba(140, 140, 130, 0.50);
-}
+
+	background: #212121;
+	background: -webkit-linear-gradient(left, #212121 0%, #787878 80%);
+	background: -o-linear-gradient(left, #212121 0%, #787878 80%);
+	background: linear-gradient(to right, #212121 0%, #787878 80%);
+}			
 
 h1
 {
@@ -45,10 +57,9 @@ strong
 	font-size: 0.9em;
 }
 
-.allQuestions
+.quizDiv
 {
-	border-radius: 25px;
-	background-color: #F3F3F3;
+	background-color: #E9DCC0;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	font-size: 1.35em;
@@ -58,38 +69,38 @@ strong
 .currentQuestion
 {
 	background-color: #8E8B82;
-	border-radius: 25px;
 	padding: 15px;
 	margin-top: 5px;
-	margin-bottom: 30px;
-	margin-right: 25px;
+	margin-bottom: 20px;
 	height: 250px;
 }
 
-.allQuestions,
+.quizDiv,
 .currentQuestion,
-.allAnswers {
-	box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.40);
-	-webkit-box-shadow: 15px 15px 30 0px rgba(0,0,0,0.40);
-	-moz-box-shadow: 15px 15px 30 0px rgba(0,0,0,0.4);
+#timerDisplay {
+	box-shadow: 5px 5px 33px -3px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 5px 5px 33px -3px rgba(0,0,0,0.4);
+	-moz-box-shadow: 5px 5px 33px -3px rgba(0,0,0,0.4);
+
+	border-radius: 20px;
 }
 
-.allAnswers
+.allAnswers,
+.messageSection
 {
-	height: 250px;
-	background-color: #E9DCBE;
-	border-radius: 25px;
 	padding: 25px;
-	margin-top: 20px;
-	margin-bottom: 25px;
 	display: none;
+	margin-bottom: 10px;
 }
 
 #timerDisplay
 {
+	color: #F9F9F9;
 	font-size: 3.1em;
 	font-weight: bolder;
-	padding-top: 15px;
+	padding: 15px;
+	text-align: center;
+	background: url("../images/background.png") repeat;
 }
 
 #quizResults

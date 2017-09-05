@@ -12,7 +12,7 @@ var currentQuestionIndex = 0;
 
 var trivia = [
 	{
-		question: "Which of the following bands released the hit song 'Disarm' in 1994?",
+		question: "Which band released the hit song 'Disarm' in 1994?",
 		answers: ["The Smashing Pumpkins", "Soundgarden", "The Meat Puppets", "Pearl Jam"]
 	},
 	{
@@ -57,7 +57,7 @@ var trivia = [
 
 $("#startButton").click(function()
 {
-	$("#gameStart, .allQuestions, .allAnswers").toggle();
+	$("#gameStart, .quizDiv, .allAnswers, .messageSection").toggle();
 	loadNextQuestion();
 	questionTimer();
 });
@@ -159,7 +159,7 @@ $(".btn-primary").click(function()
 	{
 		clearInterval(intervalID);
 		$("#triviaMessage").html("  ");
-		$(".allAnswers, .allQuestions").toggle();
+		$(".allAnswers, .quizDiv, .messageSection").toggle();
 		displayResults(numberWrong, numberCorrect, numberUnanswered);
 	} else
 	{
