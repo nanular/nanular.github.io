@@ -10,6 +10,10 @@ var numberWrong = 0;
 var numberUnanswered = 0;
 var currentQuestionIndex = 0;
 
+
+//Extra questoins may be added without making any additional code change.
+//The correct answer should be placed in the zero index of the "answers" array.
+//The program will randomly organized all 4 given answers to choose from.
 var trivia = [
 	{
 		question: "Which band released the hit song 'Disarm' in 1994?",
@@ -109,15 +113,15 @@ function questionTimer()
 		secondsRemaining--;
 		if(secondsRemaining === 0)
 		{
-			$("#timerDisplay").html("0:0" + secondsRemaining);
-      $("#triviaMessage").html("Time Is Up!");
-      numberUnanswered++;
-      currentQuestionIndex++;
-      answerButtonLock = true;
-      clearInterval(intervalID);
-      loadNextQuestion();
-      questionTimer();
-      return;
+			$("#timerDisplay").html("0:00");
+      		$("#triviaMessage").html("Time Is Up!");
+      		numberUnanswered++;
+     		 currentQuestionIndex++;
+     		 answerButtonLock = true;
+     		 clearInterval(intervalID);
+     		 loadNextQuestion();
+     		 questionTimer();
+     		 return;
 		} else if(secondsRemaining < 10)
 		{
 			$("#timerDisplay").html("0:0" + secondsRemaining);
@@ -145,12 +149,12 @@ $(".btn-primary").click(function()
 	answerButtonLock = true;
 	if($(this).text() === trivia[currentQuestionIndex].answers[0])
 	{
-		$("#triviaMessage").html("Correct!");
+		$("#triviaMessage").html("Correct!<br>");
 		numberCorrect++;
 	} else
 	{
 		numberWrong++;
-		$("#triviaMessage").html("Incorrect!<br>Correct Answer:<br><strong>"
+		$("#triviaMessage").html("Incorrect!<br><br>Correct Answer:<br><strong>"
 			+ trivia[currentQuestionIndex].answers[0] + "</strong>");
 	}
 	currentQuestionIndex++;
@@ -158,9 +162,18 @@ $(".btn-primary").click(function()
 	if(currentQuestionIndex === trivia.length)
 	{
 		clearInterval(intervalID);
-		$("#triviaMessage").html("  ");
-		$(".allAnswers, .quizDiv, .messageSection").toggle();
-		displayResults(numberWrong, numberCorrect, numberUnanswered);
+		secondsRemaining = 3;
+		intervalID = window.setInterval(lastQuestionCountdown, 900);
+		function lastQuestionCountdown()
+		{
+			secondsRemaining--;
+			if(secondsRemaining === 0)
+			{
+				$("#triviaMessage").html("  ");
+				$(".allAnswers, .quizDiv, .messageSection").toggle();
+				displayResults(numberWrong, numberCorrect, numberUnanswered);
+			}
+		}
 	} else
 	{
 		clearInterval(intervalID);

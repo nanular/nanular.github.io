@@ -51,7 +51,7 @@
 
 
 
-	<div class="container quizDiv">
+	<div class="container quizDiv" id="quizMain">
 
 		<!-- Question -->
 		<div class="row">
@@ -63,19 +63,24 @@
 			<div class="col-1"></div>
 		</div>
 
-		<!-- Timer -->
+		<!-- Timer & Feedback Message -->
 		<div class="row">
 			<div class="col-1"></div>
-				<div class="col-10">
-					<p id="timerDisplay"></p>
-				</div>
+			<div class="col-3">
+				<p id="timerDisplay"></p>
+			</div>
 			<div class="col-1"></div>
+			<div class="col-7 messageSection">
+				<p id="triviaMessage"></p>
+			</div>
 		</div>
+
+		<br><br>
 
 		<!-- Answers -->
 		<div class="row">
 			<div class="col-1"></div>
-				<div class="col-5 allAnswers">
+				<div class="col-10 allAnswers">
 					<ul>
 						<li><button class="btn btn-primary" id="buttonOne" type="button" value="answerOne"></button></li>
 						<li><button class="btn btn-primary" id="buttonTwo" type="button" value="answerTwo"></button></li>
@@ -83,12 +88,14 @@
 						<li><button class="btn btn-primary" id="buttonFour" type="button" value="answerFour"></button></li>
 					</ul>
 				</div>
-				<div class="col5 messageSection">
-					<p id="triviaMessage"></p>
-				</div>
-			<div class="col-1"></div>
+			<div class="col-1">
+				<br><br><br>
+			</div>
 		</div>
+
 	</div>
+
+
 	
 	<br><br>
 	<br><br>

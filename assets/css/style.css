@@ -18,7 +18,6 @@
 ul, li
 {
 	list-style: none;
-	width: 175px;
 }
 
 .btn-primary
@@ -26,17 +25,16 @@ ul, li
 	box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
 	-webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
 	-moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.25);
-	width: 225%;
 }
 
 header
 {
 	color: white;
 	padding: 20px;
-	margin-bottom: 45px;
+	margin-bottom: 30px;
 
 	border-bottom-style: solid;
-	border-bottom-width: 7px;
+	border-bottom-width: 5px;
 	border-bottom-color: : rgba(140, 140, 130, 0.50);
 
 	background: #212121;
@@ -48,7 +46,7 @@ header
 h1
 {
 	font-family: "lansbury";
-	font-size: 8.5em;
+	font-size: 7.1em;
 	text-shadow: 7px 4px 11px rgba(0,0,0,0.25);
 }
 
@@ -76,9 +74,9 @@ strong
 .currentQuestion
 {
 	background-color: #8E8B82;
-	padding: 15px;
+	padding: 15px 5px 0px 10px;
 	margin-top: 5px;
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 	height: 250px;
 }
 
@@ -95,9 +93,7 @@ strong
 .allAnswers,
 .messageSection
 {
-	padding: 25px;
 	display: none;
-	margin-bottom: 10px;
 }
 
 #timerDisplay
@@ -105,9 +101,10 @@ strong
 	font-family: alarmclock;
 	color: red;
 	font-size: 4em;
-	padding: 15px;
 	text-align: center;
 	background: url("../images/background.png") repeat;
+	height: 120px;
+	width: 100%
 }
 
 #quizResults
@@ -117,6 +114,11 @@ strong
 
 #triviaMessage
 {
-	font-size: 0.85em;
+	background-color: white;
+	width: 85%;
+	border-radius: 20px;
+	font-size: 0.65em;
+	padding: 20px;
+	height: 120px;
 }
 
