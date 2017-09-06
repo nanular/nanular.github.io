@@ -133,7 +133,7 @@ function questionTimer()
 		if(secondsRemaining === 10)
 		{
 			var tenSeconds = new Audio("assets/sounds/tenSeconds.mp3");
-			tenSeconds.volume = 0.05;
+			tenSeconds.volume = 0.50;
 			tenSeconds.play();
 		} else if(secondsRemaining === 27)
 		{
@@ -161,9 +161,13 @@ $(".btn-primary").click(function()
 
 	if(currentQuestionIndex === trivia.length)
 	{
+		var standby = new Audio("assets/sounds/standby.mp3");
+		standby.volume = 0.50;
+		standby.play();
+
 		clearInterval(intervalID);
-		secondsRemaining = 3;
-		intervalID = window.setInterval(lastQuestionCountdown, 900);
+		secondsRemaining = 5;
+		intervalID = window.setInterval(lastQuestionCountdown, 1000);
 		function lastQuestionCountdown()
 		{
 			secondsRemaining--;
@@ -194,6 +198,18 @@ function displayResults()
 	$("#correctlyAnswered").append(numberCorrect);
 	$("#incorrectlyAnswered").append(numberWrong);
 	$("#unansweredQuestions").append(numberUnanswered);
+
+	if(percentageScore < 50)
+	{
+		var nextTime = new Audio("assets/sounds/nextTime.mp3");
+		nextTime.volume = 0.50;
+		nextTime.play();
+	} else if(percentageScore > 75)
+	{
+		var congratulations = new Audio("assets/sounds/congratulations.mp3");
+		congratulations.volume = 0.50;
+		congratulations.play();
+	}
 }
 
 
