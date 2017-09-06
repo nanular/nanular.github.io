@@ -204,7 +204,7 @@ function displayResults()
 		var nextTime = new Audio("assets/sounds/nextTime.mp3");
 		nextTime.volume = 0.50;
 		nextTime.play();
-	} else if(percentageScore > 75)
+	} else if(percentageScore >= 70)
 	{
 		var congratulations = new Audio("assets/sounds/congratulations.mp3");
 		congratulations.volume = 0.50;
